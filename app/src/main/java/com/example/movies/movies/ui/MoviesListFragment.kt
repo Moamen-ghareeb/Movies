@@ -71,9 +71,6 @@ class MoviesListFragment : Fragment() {
                     movieAdapter.submitList(movies.data)
                 })
                 viewModel.refreshData()
-                Toast.makeText(
-                    context, "Movies Refreshed Success", Toast.LENGTH_SHORT
-                ).show()
             } else if (movies is Resultf.Error) {
                 Log.i("error", movies.exception.toString())
                 Toast.makeText(

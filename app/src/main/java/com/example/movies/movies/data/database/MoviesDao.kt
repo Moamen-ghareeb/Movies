@@ -9,7 +9,7 @@ import com.example.movies.movies.model.MoviesResult
 @Dao
 interface MoviesDao {
 
-    @Query("SELECT * from MoviesEntity ORDER BY popularity ASC")
+    @Query("SELECT * from MoviesEntity ORDER BY popularity  DESC ")
     fun getMovies(): List<MoviesResult>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
