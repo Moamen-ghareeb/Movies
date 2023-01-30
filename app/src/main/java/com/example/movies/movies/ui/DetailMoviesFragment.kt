@@ -38,8 +38,8 @@ class DetailMoviesFragment : Fragment() {
             .placeholder(R.drawable.loading_img)
             .error(R.drawable.ic_broken_image)
             .into(binding.moviePoster)
-        binding.movieTitle.text=args.movie.title.toString()
-        binding.moviesDetial.text=args.movie.overview.toString()
+        binding.movieTitle.text=args.movie.title
+        binding.moviesDetial.text=args.movie.overview
 
     }
 }

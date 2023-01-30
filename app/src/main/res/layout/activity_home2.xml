@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="139dp"
         android:layout_height="129dp"
-        android:src="@drawable/ic_baseline_bathtub_24"
+        android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -24,8 +24,8 @@
         android:fontFamily="cursive"
         android:lineSpacingExtra="24sp"
         android:text="@string/hello"
+        android:textColor="@color/Light_blue"
         android:textAllCaps="true"
-        android:textColor="#FF5722"
         android:textSize="40sp"
         android:textStyle="bold|italic"
         android:typeface="normal"

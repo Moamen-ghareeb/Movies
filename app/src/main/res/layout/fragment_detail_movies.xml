@@ -11,7 +11,6 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="50sp"
         android:layout_marginVertical="50sp"
-        app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="16sp"
         app:cardElevation="8sp"
         >
@@ -20,6 +19,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
+            <ImageView
+                android:id="@+id/backGround"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
 
         <ImageView
             android:id="@+id/moviePoster"
@@ -37,7 +41,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:textAlignment="center"
-                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +57,6 @@
         android:paddingRight="14dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -15,13 +15,14 @@ class MovieAdapter(private val listener:(MoviesResult)->Unit)
 
      class ViewHolder( val binding: MovieLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
     }
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(MovieLayoutBinding.inflate(LayoutInflater.from(viewGroup.context)))
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
         val items =  getItem(position)
+        holder.binding.moviesData.text= items.release_date
         holder.binding.movieName.text= items.title
         holder.itemView.setOnClickListener{
             listener(items)
@@ -42,7 +43,6 @@ class MovieAdapter(private val listener:(MoviesResult)->Unit)
             }
         }
     }
-
 }
 
 

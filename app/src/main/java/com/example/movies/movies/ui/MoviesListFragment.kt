@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movies.movies.adapter.MovieAdapter
 import com.example.movies.movies.model.Resultf
 import com.example.movies.movies.viewmodel.MovieViewModel
@@ -25,7 +26,7 @@ class MoviesListFragment : Fragment() {
     private val viewModel: MovieViewModel by viewModels()
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var connectionLiveData: ConnectionLiveData
-    
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -46,10 +47,12 @@ class MoviesListFragment : Fragment() {
     }
 
     private fun prepareRecyclerView() {
+
         movieAdapter = MovieAdapter {
             val navHostFragment = MoviesListFragmentDirections.actionMoviesListToDetailMovies(it)
             findNavController().navigate(navHostFragment)
         }
+        binding.rvMovies.layoutManager = GridLayoutManager(this.requireContext(),2)
         binding.rvMovies.apply {
             adapter = movieAdapter
         }
