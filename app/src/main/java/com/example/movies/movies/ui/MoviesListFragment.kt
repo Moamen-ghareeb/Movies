@@ -25,11 +25,7 @@ class MoviesListFragment : Fragment() {
     private val viewModel: MovieViewModel by viewModels()
     private lateinit var movieAdapter: MovieAdapter
     private lateinit var connectionLiveData: ConnectionLiveData
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
+    
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
