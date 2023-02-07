@@ -22,7 +22,7 @@ class MovieAdapter(private val listener:(MoviesResult)->Unit)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int){
         val items =  getItem(position)
-        holder.binding.moviesData.text= items.release_date
+        holder.binding.moviesData.text="("+ items.release_date.substring(0,4) +")"
         holder.binding.movieName.text= items.title
         holder.itemView.setOnClickListener{
             listener(items)
