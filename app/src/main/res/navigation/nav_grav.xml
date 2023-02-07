@@ -22,6 +22,9 @@
         <argument
             android:name="movie"
             app:argType="com.example.movies.movies.model.MoviesResult" />
+        <action
+            android:id="@+id/action_DetailMoviesFragment_to_MoviesListFragment"
+            app:destination="@id/MoviesListFragment" />
     </fragment>
     <fragment
         android:id="@+id/welcome"

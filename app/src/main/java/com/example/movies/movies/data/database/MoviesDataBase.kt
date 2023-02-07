@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.example.movies.movies.model.MoviesResult
 
 
-@Database(entities = [MoviesResult::class], version = 2, exportSchema = false)
+@Database(entities = [MoviesResult::class], version = 1, exportSchema = false)
 abstract class MoviesDataBase : RoomDatabase() {
     abstract fun moviesDao(): MoviesDao
 }
