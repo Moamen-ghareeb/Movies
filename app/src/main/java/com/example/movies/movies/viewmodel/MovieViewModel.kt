@@ -3,6 +3,7 @@ package com.example.movies.movies.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.WorkManager
 import com.example.movies.movies.model.MoviesResult
 import com.example.movies.movies.model.Resultf
 import com.example.movies.movies.repository.MoviesRepo
@@ -20,14 +21,16 @@ class MovieViewModel @Inject constructor(private var repo: MoviesRepo) : ViewMod
         MutableLiveData<List<MoviesResult>>()
     }
 
+//    private val workManager = WorkManager.getInstance(application)
+
+
     init {
         viewModelScope.launch {
+            localMoviesList.postValue(repo.getMoviesByDatabase())
             try {
                 (Resultf.Success(repo.returnDataFromApi()))
                 repo.refreshData(repo.returnDataFromApi())
-                localMoviesList.postValue(repo.getMoviesByDatabase())
             } catch (exception: Exception) {
-                localMoviesList.postValue(repo.getMoviesByDatabase())
                 when (exception) {
                     is IOException -> {
                         (Resultf.Error(exception.message.toString()))
